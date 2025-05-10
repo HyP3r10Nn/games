@@ -4,24 +4,24 @@ import random
 ctk.set_appearance_mode("dark")
 ctk.set_default_color_theme("blue")
 
-# App GUI
+
 app = ctk.CTk()
 app.geometry("400x300")
 app.title("Rock Paper Scissors")
 
-# Úvodní text
+
 title = ctk.CTkLabel(app, text="Welcome in game")
 title.pack(pady=5)
 
-# Výsledkový štítek (zatím prázdný)
+
 result_label = ctk.CTkLabel(app, text="")
 result_label.pack(pady=5)
 
-# Počet výher
+
 player_wins = 0
 computer_wins = 0
 
-# Funkce na vyhodnocení hry
+
 def play(player_choice):
     global player_wins, computer_wins
     choices = ["rock", "paper", "scissors"]
@@ -38,12 +38,13 @@ def play(player_choice):
         computer_wins += 1
         result_label.configure(text=f"You lose! Computer chose {computer_choice}")
 
-    # 🔄 Aktualizace skóre
+   
     wins_label.configure(text="Wins for computer: " + str(computer_wins))
     wins_label2.configure(text="Wins for player: " + str(player_wins))
 
 
-# Tlačítka pro výběr
+
+
 rock_btn = ctk.CTkButton(app, text="Rock", command=lambda: play("rock"))
 rock_btn.pack(pady=5)
 
